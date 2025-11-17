@@ -1,0 +1,265 @@
+body{
+    background-color: rgb(46, 46, 46);
+    color: aliceblue;
+}
+
+p{
+    margin: 0;
+}
+
+h2, h3{
+    margin-left: 2%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+a{
+    text-decoration: none;
+    color:unset;
+}
+
+#principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 17%;
+}
+
+#pr_haut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    border-bottom: solid 1px antiquewhite;
+    padding-bottom: 10px;
+}
+
+#situation{
+    width: auto;
+    padding: 10px;
+    background-color: #a00000;
+    border-radius: 10%;
+    font-size: small;
+}
+
+#pr_bas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+#infos{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: scroll;
+    width: 100%;
+    max-width: 120%;
+    scroll-behavior: smooth;
+}
+
+#infos>img{
+    width: 10%;
+    padding: 10px;
+    margin-right: 5px;
+    background-color: #7c0000;
+    border-radius: 65px;
+}
+
+#label{
+    font-weight: bolder;
+}
+
+#photoprinc{
+    width: 85%;
+    margin: 15px;
+    border-radius: 2px;
+}
+
+#principal, #secondaire {
+    border: solid 1px rgb(180, 180, 180);
+    border-radius: 10px;
+    margin: 35px;
+    background-color: #680000;
+    box-shadow: 0px 0px 15px rgb(73, 73, 73);
+}
+
+#reseaux > img {
+    width: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#insta:hover, #facebook:hover{
+    cursor: pointer;
+    width: 12%;
+}
+
+#reseaux{
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#secondaire{
+    flex-basis: 50%;
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: flex-end;
+    background-color: #414141;
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 0;
+    border-radius: 3%;
+}
+
+#navbar>li, #ab_me_list>li{
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+#navbar>li:not(.selected)::after, #ab_me_list>li:not(.selected)::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: red;
+    transition: width 0.3s ease;
+}
+
+#navbar>li:hover::after, #ab_me_list>li:hover::after{
+    width: 100%;
+}
+
+#ab_me_list{
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    list-style: none;
+    justify-content: flex-start;
+    margin-left: 0;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+
+.selected{
+    color: red;
+    border-bottom:solid 2px red;
+}
+
+#ci{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.hobby{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45%;
+    background-color: #a00000;
+    transition: transform 0.3 ease-in-out;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+.hobby>img{
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.hobby:hover, #lan:hover{
+    transform: scale(1.1);
+}
+
+#comp{
+    width: 100%;
+    height: auto;
+}
+
+#langages{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#lan{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    padding: 10 20 10 20;
+    width: 35%;
+    background-color: #a00000;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+#lan>img{
+    height: 75px;
+    width: 75px;
+    border-radius: 5px;
+}
+
+#detail_ci{
+    display: none;
+    background-color:#a00000;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.projet{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45%;
+    margin: 2%;
+    cursor: pointer;
+
+}
+
+.projet>h3:hover{
+    color: red;
+}
+
+
+.projet>img{
+    width: 100%;
+    border-radius: 5px;
+}
