@@ -111,7 +111,7 @@ a {
 #insta:hover,
 #facebook:hover {
   cursor: pointer;
-  transform: scale(1,1);
+  transform: scale(1.1);
 }
 
 #reseaux {
@@ -127,6 +127,7 @@ a {
   display: flex;
   flex-direction: column;
   flex-basis: 60%;
+  overflow: hidden;
 }
 
 #navbar {
@@ -207,7 +208,7 @@ a {
   justify-content: flex-start;
   width: 45%;
   background: linear-gradient(270deg, #a00000 0%, #680000 100%);
-  transition: transform 0.3 ease-in-out;
+  transition: transform 0.3s ease-in-out;
   border-radius: 5px;
   margin: 2%;
 }
@@ -258,7 +259,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10 20  ;
+  padding: 10px 20px;
   flex: 0 0 auto;
   width: 200px;
   background: linear-gradient(270deg, #a00000 0%, #680000 100%);
@@ -310,7 +311,7 @@ a {
   width: 0;
   background-color: rgb(250, 20, 20);
   border-radius: 10px;
-  animation: fill_moyen 2s forwards;
+  animation: fill_bas 2s forwards;
 }
 
 @keyframes fill_fort {
