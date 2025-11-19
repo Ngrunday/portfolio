@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="portfolio.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
   <main>
@@ -44,7 +45,7 @@
       <ul id="navbar">
         <li id="aboutme" class="selected">About me</li>
         <li id="project">Projets</li>
-        <li id="Contact">Contact</li>
+        <li id="contact_nav">Contact</li>
       </ul>
       <div id="abme_princip">
         <div id="abme_text">
@@ -54,6 +55,7 @@
             <li><a href="#comp">Compétences</a></li>
           </ul>
           <h2 id="abme_title">About Me</h2>
+          <div class="subtitle"></div>
           <p id="profil">
             Je suis un étudiant passioné par l'informatique et par ses nombrux
             domaines notamment le développement web et les services réseaux. Je
@@ -162,7 +164,35 @@
           <h4></h4>
         </div>
       </div>
+      <div id="contact">
+        <h2>Contacts</h2>
+        <div class="subtitle"></div>
+        <div id="contact_princip">
+          <div id="map">
+          </div>
+          <form id="contact_form">
+            <div id="form_head">
+              <div class="form_group">
+                <input id="nom_txt" type="text" required placeholder=" " autocomplete="off">
+                <label id="nom_lab" for="nom_txt">Votre nom</label>
+              </div>
+              <div class="form_group">
+                <input id="sujet_txt" type="text" required placeholder=" " autocomplete="off">
+                <label id="sujet_lab" for="sujet_txt">Le sujet de votre contact</label>
+              </div>
+            </div>
+            <div id="form_low">
+              <div class="form_group" id="mess">
+                <input id="message_txt" name="message_txt" type="text" required placeholder=" " autocomplete="off">
+                <label id="message_lab" for="message_txt">Votre message...</label>
+              </div>
+              <button id="bout_form">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </main>
   <script src="portfolio.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>

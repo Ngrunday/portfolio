@@ -2,7 +2,7 @@ const insta = document.querySelector("#insta");
 const facebook = document.querySelector("#facebook");
 const aboutme = document.querySelector("#aboutme");
 const projets = document.querySelector("#project");
-const contact = document.querySelector("#Contact");
+const contact = document.querySelector("#contact_nav");
 const liste_nav = document.querySelectorAll("#navbar>li");
 const secondaire = document.querySelector("#secondaire");
 const ab_me = document.querySelector("#abme_princip");
@@ -16,6 +16,8 @@ const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const langages = document.querySelector('#langages');
 const item_langages = document.querySelectorAll('#langages .lan');
+const bout_contact = document.querySelector("#bout_form");
+const div_contact = document.querySelector("#contact");
 
 //Projets
   const div_proj_princ = document.createElement("div");
@@ -75,6 +77,16 @@ projets.addEventListener("click",()=>{
 
 });
 
+contact.addEventListener("click",()=>{
+  liste_nav.forEach(element => {
+    element.classList.remove('selected');
+  });
+  cacherDiv();
+  contact.classList.add('selected');
+  div_contact.style.display  = "block";
+
+});
+
 aboutme.addEventListener("click",()=>{
   liste_nav.forEach(element => {
     element.classList.remove('selected');
@@ -93,6 +105,14 @@ ab_me_list.forEach(element => {
     element.classList.add('selected');
   });
 });
+
+bout_contact.addEventListener("click",(Event)=>{
+  Event.preventDefault();
+  const nom_contact = encodeURIComponent(document.getElementById("nom_txt").value);
+  const sujet_contact = encodeURIComponent(document.getElementById("sujet_txt").value);
+  const message_contact = encodeURIComponent(document.getElementById("message_txt").value);
+  window.location.href = `mailto:nolan.delepine.pro@gmail.com?subject=${sujet_contact}%0AÀ propos de: ${nom_contact}&body=Nom: ${nom_contact}%0AMessage:%0A${message_contact}`;
+})
 
 function updateCarousel() {
   const itemWidth = item_langages[0].offsetWidth + 10; // + gap
@@ -122,7 +142,7 @@ setInterval(() => {
   const maxIndex = item_langages.length - visibleItems;
   if(index > maxIndex) index = 0; // revient au début
   updateCarousel();
-}, 3000);
+}, 4000);
 
 // Adapter au resize
 window.addEventListener('resize', updateCarousel);
@@ -135,8 +155,25 @@ muaythai.addEventListener("click",()=>{
 function cacherDiv() {
   div_proj_princ.style.display = "none";
   ab_me.style.display = "none";
+  div_contact.style.display = "none"
 }
 
 function afficherDetail(){
   ci_detail.style.display = "block";
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const map = L.map('map').setView([45.6333, 5.3667], 13);
+  
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  
+  const apiKey = "0571e6bc676b4d6e8e066db468e5d8d4";
+  
+  L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
+    //         ↑ parenthèse ouvrante ici, pas juste le backtick
+    attribution: '&copy; OpenWeatherMap',
+    opacity: 0.5
+  }).addTo(map);
+});
