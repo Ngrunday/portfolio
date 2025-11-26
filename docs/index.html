@@ -1,9 +1,10 @@
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
   <link rel="stylesheet" href="portfolio.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
   <main>
@@ -165,38 +166,130 @@
                 </div>
               </div>
               <div id="bouton_carousel">
-                <button id="prev">G</button>
-                <button id="next">D</button>
+                <img src="img/fleche.png" id="prev" />
+                <img src="img/fleche.png" id="next" />
               </div>
             </div>
           </div>
-        </div>
-        <div id="detail_ci">
-          <img src="" />
-          <h4></h4>
+
+          <h3>Logiciels:</h3>
+            <div id="carous_cont">
+              <div id="logiciels">
+                <div class="lan">
+                  <img src="img/c.png" />
+                  <p>C</p>
+                  <div class="barre">
+                    <div class="barre_int_fort"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/sql.png" />
+                  <p>SQL(PostgreSQL)</p>
+                  <div class="barre">
+                    <div class="barre_int_fort"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/php.png" />
+                  <p>PHP</p>
+                  <div class="barre">
+                    <div class="barre_int_fort"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/javascript.png" />
+                  <p>JavaScript</p>
+                  <div class="barre">
+                    <div class="barre_int_fort"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/html.png" />
+                  <p>HTML</p>
+                  <div class="barre">
+                    <div class="barre_int_fort"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/css.png" />
+                  <p>CSS</p>
+                  <div class="barre">
+                    <div class="barre_int_fort"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/java.png" />
+                  <p>Java</p>
+                  <div class="barre">
+                    <div class="bar_int_moyen"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/bash.png" />
+                  <p>Bash</p>
+                  <div class="barre">
+                    <div class="bar_int_moyen"></div>
+                  </div>
+                </div>
+                <div class="lan">
+                  <img src="img/python.png" />
+                  <p>Python(notions)</p>
+                  <div class="barre">
+                    <div class="bar_int_bas"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="bouton_carousel">
+                <img src="img/fleche.png" id="prev" />
+                <img src="img/fleche.png" id="next" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div id="contact">
         <h2>Contacts</h2>
         <div class="subtitle"></div>
         <div id="contact_princip">
-          <div id="map">
-          </div>
+          <div id="map"></div>
           <form id="contact_form">
             <div id="form_head">
               <div class="form_group">
-                <input id="nom_txt" type="text" required placeholder=" " autocomplete="off">
+                <input
+                  id="nom_txt"
+                  type="text"
+                  required
+                  placeholder=" "
+                  autocomplete="off"
+                />
                 <label id="nom_lab" for="nom_txt">Votre nom</label>
               </div>
               <div class="form_group">
-                <input id="sujet_txt" type="text" required placeholder=" " autocomplete="off">
-                <label id="sujet_lab" for="sujet_txt">Le sujet de votre contact</label>
+                <input
+                  id="sujet_txt"
+                  type="text"
+                  required
+                  placeholder=" "
+                  autocomplete="off"
+                />
+                <label id="sujet_lab" for="sujet_txt"
+                  >Le sujet de votre contact</label
+                >
               </div>
             </div>
             <div id="form_low">
               <div class="form_group" id="mess">
-                <input id="message_txt" name="message_txt" type="text" required placeholder=" " autocomplete="off">
-                <label id="message_lab" for="message_txt">Votre message...</label>
+                <input
+                  id="message_txt"
+                  name="message_txt"
+                  type="text"
+                  required
+                  placeholder=" "
+                  autocomplete="off"
+                />
+                <label id="message_lab" for="message_txt"
+                  >Votre message...</label
+                >
               </div>
               <button id="bout_form">Envoyer</button>
             </div>

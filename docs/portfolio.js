@@ -7,11 +7,7 @@ const liste_nav = document.querySelectorAll("#navbar>li");
 const secondaire = document.querySelector("#secondaire");
 const ab_me = document.querySelector("#abme_princip");
 const ab_me_list = document.querySelectorAll("#ab_me_list>li");
-const muaythai = document.querySelector("#muaythai");
-const muscu = document.querySelector("#muscu");
-const rando = document.querySelector("#rando");
 const alldiv = document.querySelectorAll("div");
-const ci_detail = document.querySelector("#detail_ci");
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const langages = document.querySelector('#langages');
@@ -146,11 +142,6 @@ setInterval(() => {
 
 // Adapter au resize
 window.addEventListener('resize', updateCarousel);
-
-muaythai.addEventListener("click",()=>{
-  ci_detail
-  afficherDetail();
-});
 
 function cacherDiv() {
   div_proj_princ.style.display = "none";
