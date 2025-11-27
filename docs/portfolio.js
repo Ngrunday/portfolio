@@ -140,7 +140,7 @@ setInterval(() => {
   updateCarousel();
 }, 4000);
 
-// Adapter au resize
+// Adapter au resize caca
 window.addEventListener('resize', updateCarousel);
 
 function cacherDiv() {
