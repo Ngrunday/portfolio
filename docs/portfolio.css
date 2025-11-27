@@ -124,6 +124,8 @@ a {
   margin: 35px;
   background: linear-gradient(180deg, #a00000 0%, #680000 100%);
   box-shadow: 0px 0px 15px rgb(73, 73, 73);
+  scrollbar-color: red red;
+  min-height: 60vh;
 }
 
 #reseaux > img {
@@ -151,7 +153,12 @@ a {
   display: flex;
   flex-direction: column;
   flex-basis: 60%;
-  overflow: hidden;
+  overflow: scroll;
+  scrollbar-color: rgb(255, 0, 0) rgb(255, 11, 11);
+  overflow: scroll;
+  max-height: 90vh;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
 }
 
 #navbar {
@@ -241,7 +248,7 @@ a {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(25px);
+    transform: translateX(35px);
   }
   to {
     opacity: 1;
@@ -276,13 +283,6 @@ a {
   margin-left: 2%;
 }
 
-.hobby:hover,
-.lan:hover {
-  transform: scale(1.01);
-  background: linear-gradient(180deg, #ebeaeb, #807f7f, #ebeaeb);
-  color: #a00000;
-}
-
 .log>p{
   order: 3;
 }
@@ -295,12 +295,15 @@ a {
   transition: 0.5s ease;
 }
 
+.log>p{
+  transition: 0.5s ease;
+}
+
 #comp {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   overflow: hidden;
 }
 
@@ -320,6 +323,7 @@ a {
   margin-bottom: 10px;
   margin-top: 10px;
   transition: transform 0.5s ease;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .lan {
@@ -335,7 +339,6 @@ a {
   background: linear-gradient(270deg, #a00000 0%, #680000 100%);
   margin: 1%;
   border-radius: 5px;
-  z-index: 0;
 }
 
 .lan > img {
@@ -369,72 +372,31 @@ a {
   height: 50px;
 }
 
-.barre {
-  width: 85%;
-  height: 12px;
-  background-color: #4b4b4b;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.barre_int_fort {
-  height: 100%;
+.lan .bar_des{
   width: 0;
-  background-color: rgb(250, 20, 20);
-  border-radius: 10px;
-  animation: fill_fort 2s forwards;
+  max-width: 75%;
+  order: 2;
+  transition: width 0.5s ease;
 }
 
-.bar_int_moyen {
-  height: 100%;
-  width: 0;
-  background-color: rgb(250, 20, 20);
-  border-radius: 10px;
-  animation: fill_moyen 2s forwards;
+.lan:hover .bar_des{
+  border-bottom: solid 1px #a00000;
+  width: 100%;
 }
 
-.bar_int_bas {
-  height: 100%;
-  width: 0;
-  background-color: rgb(250, 20, 20);
-  border-radius: 10px;
-  animation: fill_bas 2s forwards;
+.lan:hover p{
+  color: #a00000;
 }
 
-@keyframes fill_fort {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 85%;
-  }
-}
-
-@keyframes fill_moyen {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-
-@keyframes fill_bas {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
+.lan>p{
+  order: 3;
 }
 
 #logiciels{
   display: flex;
   flex-direction: row;
   overflow: scroll;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .log{
@@ -459,18 +421,21 @@ a {
   order: 1;
 }
 
-.log:hover{
-  background: linear-gradient(180deg, #ebeaeb, #807f7f, #ebeaeb);
+.log:hover, .lan:hover{
+  background: linear-gradient(180deg, #cecece, #807f7f, #cecece);
   color: #a00000;
+  cursor: pointer ;
 }
 
+
+.log:hover .bar_des{
+  transform: translateY(25px);
+  border-bottom: solid 1px #a00000;
+}
 
 .log:hover p{
-  order: 2;
-}
-.log:hover .bar_des{
-  order: 3;
-  border-bottom: solid 1px #a00000;
+  color: #a00000;
+  transform: translateY(-25px);
 }
 
 #detail_ci {

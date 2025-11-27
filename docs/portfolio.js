@@ -136,7 +136,7 @@ setInterval(() => {
   index++;
   const visibleItems = Math.floor(langages.parentElement.offsetWidth / item_langages[0].offsetWidth);
   const maxIndex = item_langages.length - visibleItems;
-  if(index > maxIndex) index = 0; // revient au début
+  if(index > maxIndex) index = 0;
   updateCarousel();
 }, 4000);
 
@@ -163,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const apiKey = "0571e6bc676b4d6e8e066db468e5d8d4";
   
   L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
-    //         ↑ parenthèse ouvrante ici, pas juste le backtick
     attribution: '&copy; OpenWeatherMap',
     opacity: 0.5
   }).addTo(map);
