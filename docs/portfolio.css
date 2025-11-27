@@ -317,14 +317,15 @@ a {
 }
 
 #langages {
-  width: 100%;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  width: 100%;
   margin-top: 10px;
+  margin-left: 10px;
   transition: transform 0.5s ease;
-  animation: fadeIn 0.5s ease-out forwards;
 }
+
 
 .lan {
   margin-bottom: 10px;
@@ -638,6 +639,12 @@ textarea:not(:placeholder-shown) + label {
   }
   #pr_haut {
     border-bottom: solid 2px aliceblue;
+  }
+
+  #navbar{
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;  
   }
 
   #secondaire {
