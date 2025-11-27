@@ -649,7 +649,7 @@ textarea:not(:placeholder-shown) + label {
 
   #secondaire {
     width: 85%;
-    overflow: hidden;
+    overflow: scroll;
   }
 
   #ab_me_list {
