@@ -2,7 +2,7 @@ html {
   overscroll-behavior: none;
   scroll-behavior: smooth;
 }
-
+/*a*/
 body {
   background: linear-gradient(180deg, #ebeaeb, #807f7f, #ebeaeb);
   background-size: 600% 600%;
