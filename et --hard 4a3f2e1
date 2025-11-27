@@ -1,0 +1,23 @@
+[33m4d0f270[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/main
+[33m4d0f270[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: rebase (continue): :amelioration graphique
+[33mb25153d[m HEAD@{2}: pull --rebase (start): checkout b25153d2e8785b542337b785c2b920af544f7ccc
+[33mae75c28[m HEAD@{3}: commit: amelioration graphique
+[33mb6eb357[m HEAD@{4}: commit: logiciels
+[33mfe58caf[m HEAD@{5}: pull: Fast-forward
+[33me6aa0d0[m HEAD@{6}: commit: reglage hobby et carroussel
+[33m11b2963[m HEAD@{7}: commit: fin contact
+[33m3e2a13e[m HEAD@{8}: pull --rebase: Fast-forward
+[33m6d1c608[m HEAD@{9}: pull --rebase (finish): returning to refs/heads/main
+[33m6d1c608[m HEAD@{10}: pull --rebase (pick): ahh
+[33m4eae906[m HEAD@{11}: pull --rebase (start): checkout 4eae906b7a7a414d80eb26a14f9e97aad0d72283
+[33mcddd8a1[m HEAD@{12}: commit: ahh
+[33m1f112fa[m HEAD@{13}: pull --rebase (finish): returning to refs/heads/main
+[33m1f112fa[m HEAD@{14}: pull --rebase (pick): debut version tel
+[33me7a966e[m HEAD@{15}: pull --rebase (start): checkout e7a966e53a0e6e4678c352f984f5e571d9e8dd31
+[33mab1ff2f[m HEAD@{16}: commit: debut version tel
+[33m851cad9[m HEAD@{17}: commit: Restore img folder
+[33me652c0d[m HEAD@{18}: checkout: moving from 57c19f6f4459b3073e51a641c081335c9fae78a6 to main
+[33m57c19f6[m HEAD@{19}: checkout: moving from main to 57c19f6
+[33me652c0d[m HEAD@{20}: pull: Fast-forward
+[33m57c19f6[m HEAD@{21}: commit: avancement
+[33m6a681ae[m HEAD@{22}: clone: from https://github.com/Ngrunday/portfolio.git
