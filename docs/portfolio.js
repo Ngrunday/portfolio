@@ -12,8 +12,46 @@ const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const langages = document.querySelector('#langages');
 const item_langages = document.querySelectorAll('#langages .lan');
+const item_log = document.querySelectorAll(".log");
+const item_field = document.querySelectorAll(".hobby");
 const bout_contact = document.querySelector("#bout_form");
 const div_contact = document.querySelector("#contact");
+const mode = document.querySelector("#mode");
+const princ = document.querySelector("#principal");
+
+mode.addEventListener("click",()=>{
+  if (mode.src.includes('lune.png')) {
+    mode.src = 'img/soleil.png';
+    // ici tu peux aussi appliquer ton mode clair
+    document.body.style.background = "linear-gradient(180deg, #ebeaeb, #807f7f, #ebeaeb)";
+    princ.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
+    secondaire.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)"; 
+    item_langages.forEach(element => {
+      element.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
+    });
+    item_log.forEach(element => {
+      element.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
+    });
+    item_field.forEach(element => {
+      element.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
+    });
+  } else {
+    // sinon c'est le soleil, on met la lune
+    mode.src = 'img/lune.png';
+    document.body.style.background = "linear-gradient(180deg, #3b3b3b, #807f7f, #363636)";
+    princ.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+    secondaire.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+    item_langages.forEach(element => {
+      element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+    });
+    item_log.forEach(element => {
+      element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+    });
+    item_field.forEach(element => {
+      element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+    });
+  }
+})
 
 //Projets
   const div_proj_princ = document.createElement("div");
