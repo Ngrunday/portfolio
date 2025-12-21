@@ -22,30 +22,37 @@ const princ = document.querySelector("#principal");
 mode.addEventListener("click",()=>{
   if (mode.src.includes('lune.png')) {
     mode.src = 'img/soleil.png';
-    // ici tu peux aussi appliquer ton mode clair
+    //mode clair
     document.body.style.background = "linear-gradient(180deg, #ebeaeb, #807f7f, #ebeaeb)";
     princ.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
-    secondaire.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)"; 
-    item_langages.forEach(element => {
-      element.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
-    });
+    secondaire.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
+
     item_log.forEach(element => {
-      element.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
+      element.classList.remove("sombre");
+      element.classList.add("clair");
+    });
+    item_langages.forEach(element => {
+      element.classList.remove("sombre");
+      element.classList.add("clair");
     });
     item_field.forEach(element => {
       element.style.background = "linear-gradient(180deg, #a00000 0%, #680000 100%)";
     });
   } else {
-    // sinon c'est le soleil, on met la lune
+    // sinon le mode sombre
     mode.src = 'img/lune.png';
     document.body.style.background = "linear-gradient(180deg, #3b3b3b, #807f7f, #363636)";
     princ.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
     secondaire.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+    //langages
     item_langages.forEach(element => {
-      element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+      element.classList.remove("clair");
+      element.classList.add("sombre");
     });
+
     item_log.forEach(element => {
-      element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
+      element.classList.remove("clair");
+      element.classList.add("sombre");
     });
     item_field.forEach(element => {
       element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
@@ -182,6 +189,35 @@ setInterval(() => {
 
 // Adapter pour resize
 window.addEventListener('resize', updateCarousel);
+
+const links = document.querySelectorAll('#ab_me_list a');
+const sections = [...links].map(link =>
+  document.querySelector(link.getAttribute('href'))
+);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(link =>
+        link.parentElement.classList.remove('selected')
+      );
+
+      const activeLink = [...links].find(
+        link => link.getAttribute('href') === `#${entry.target.id}`
+      );
+
+      if (activeLink) {
+        activeLink.parentElement.classList.add('selected');
+      }
+    }
+  });
+}, {
+  root: document.querySelector('#secondaire'),
+  threshold: 0.6
+});
+
+sections.forEach(section => observer.observe(section));
+
 
 function cacherDiv() {
   div_proj_princ.style.display = "none";
