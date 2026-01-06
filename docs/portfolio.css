@@ -548,6 +548,16 @@ a {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+#div_proj_princip{
+  display: none;
+}
+
+#div_projet{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .projet > h3:hover {
   color: red;
 }

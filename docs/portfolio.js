@@ -13,11 +13,48 @@ const next = document.querySelector("#next");
 const langages = document.querySelector('#langages');
 const item_langages = document.querySelectorAll('#langages .lan');
 const item_log = document.querySelectorAll(".log");
+const item_env = document.querySelectorAll('.env');
 const item_field = document.querySelectorAll(".hobby");
 const bout_contact = document.querySelector("#bout_form");
 const div_contact = document.querySelector("#contact");
 const mode = document.querySelector("#mode");
 const princ = document.querySelector("#principal");
+const div_proj = document.querySelector("#div_proj_princip");
+const div_projet2 = document.querySelector("#div_projet");
+
+
+
+
+//Projets 
+
+const projects = [
+  {
+    img: "img/sitemeteo.png",
+    date: "Juin 2025",
+    title: "Site Web de consultation météo",
+    desc: "J'ai réalisé ce projet lors de l'été 2025 afin de m'entrainer et d'affiner mes compétences en front end et surtout en back-end avec la gestion de requêtes API."
+  },
+  {
+    img: "img/site_vitrine.png",
+    date: "Janvier 2025",
+    title: "Site vitrine",
+    desc: "Site vitrine avec récupération de données API, travail réalisé à l'IUT de Valence dans le cadre d'un TP."
+  }
+];
+
+const template_proj = document.querySelector('#project-template');
+
+projects.forEach(p => {
+  const clone = template_proj.content.cloneNode(true);
+
+  clone.querySelector('img').src = p.img;
+  clone.querySelector('img').alt = p.title;
+  clone.querySelector('.date').textContent = p.date;
+  clone.querySelector('.title').textContent = p.title;
+  clone.querySelector('.desc').textContent = p.desc;
+
+  div_projet2.appendChild(clone);
+});
 
 mode.addEventListener("click",()=>{
   if (mode.src.includes('lune.png')) {
@@ -32,6 +69,10 @@ mode.addEventListener("click",()=>{
       element.classList.add("clair");
     });
     item_langages.forEach(element => {
+      element.classList.remove("sombre");
+      element.classList.add("clair");
+    });
+    item_env.forEach(element => {
       element.classList.remove("sombre");
       element.classList.add("clair");
     });
@@ -57,47 +98,14 @@ mode.addEventListener("click",()=>{
     item_field.forEach(element => {
       element.style.background = "linear-gradient(180deg, #310000 0%, #440000 100%)";
     });
+    item_env.forEach(element => {
+      element.classList.remove("clair");
+      element.classList.add("sombre");
+    });
   }
 })
 
-//Projets
-  const div_proj_princ = document.createElement("div");
-  div_proj_princ.id = "div_proj_princip";
-  const proj_titre = document.createElement("h2");
-  proj_titre.textContent = "Projets";
-  const proj_princip = document.createElement("div");
-  proj_princip.id = "div_projet";
-  const div_projet = document.createElement("div");
-  div_projet.id = "projet";
-  const projet_img = new Image();
-  projet_img.src = "img/sitemeteo.png"; 
-  const date_proj = document.createElement("p");
-  date_proj.textContent = "Juin 2025";
-  date_proj.style.color = "grey";
-  const proj_title = document.createElement("h3");
-  proj_title.textContent = "Site Web de consultation météo";
-  const proj_desc = document.createElement("p");
-  proj_desc.textContent = "J'ai réalisé ce projet lors de l'été 2025 afin de m'entrainer et de ne pas perdre mes notions de web. Il est simple mais m'a permis de travailler mes requêtes API mais aussi un peu l'esthétique, me faisant travailler à la fois le backend et le frontend.";
-  const a_suivre = document.createElement("h2");
-  a_suivre.textContent = "C'est tout... Pour l'instant !";
 
-  div_proj_princ.appendChild(proj_titre);
-
-  div_projet.style.marginBottom = "5%"
-  div_projet.appendChild(projet_img);
-  div_projet.appendChild(date_proj);
-  div_projet.appendChild(proj_title);
-  div_projet.appendChild(proj_desc);
-
-  div_projet.classList.add("projet");
-
-  proj_princip.appendChild(div_projet);
-
-  div_proj_princ.appendChild(proj_princip);
-  div_proj_princ.appendChild(a_suivre);
-  div_proj_princ.style.display = "none";
-
-  secondaire.appendChild(div_proj_princ);
 
 
 insta.addEventListener("click",()=>{
@@ -114,7 +122,7 @@ projets.addEventListener("click",()=>{
   });
   cacherDiv();
   projets.classList.add('selected');
-  div_proj_princ.style.display  = "block";
+  div_proj.style.display  = "block";
 
 });
 
@@ -229,15 +237,12 @@ sections.forEach(section => observer.observe(section));
 
 
 function cacherDiv() {
-  div_proj_princ.style.display = "none";
+  div_proj.style.display = "none";
   ab_me.style.display = "none";
   div_contact.style.display = "none"
 }
 
-function afficherDetail(){
-  ci_detail.style.display = "block";
-}
-
+//La map
 document.addEventListener('DOMContentLoaded', function() {
   const map = L.map('map').setView([45.6333, 5.3667], 13);
   
