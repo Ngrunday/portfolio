@@ -147,6 +147,15 @@ ab_me_list.forEach(element => {
   });
 });
 
+const debian = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg";
+const ubuntu = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original-wordmark.svg";
+const w10 = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg";
+const w11 = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg";
+
+
+
+
+
 bout_contact.addEventListener("click",(Event)=>{
   Event.preventDefault();
   const nom_contact = encodeURIComponent(document.getElementById("nom_txt").value);
