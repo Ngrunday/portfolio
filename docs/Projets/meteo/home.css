@@ -1,0 +1,104 @@
+html,body,header,main,footer,h1,h2,h3,p{
+    margin: 0;
+}
+
+
+body{
+    overscroll-behavior: none;
+    overflow: hidden;
+
+}
+
+
+header{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    background-image: url('img/header_back.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#header_haut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    font-family: Oswald, sans-serif;
+}
+
+#logo{
+    height: 100px;
+    width: 150px;
+    margin-left: 20px;
+}
+
+#div_menu{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    position: relative;
+}
+
+#menu, .menu_tourne, .menu_normal{
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#menu_liste{
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+#espace{
+    padding: 0;
+    width: 5px;
+    border-bottom: solid 1px white;
+}
+
+#menu_liste li{
+    padding: 10px;
+    cursor: pointer;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    border: solid 1px white;
+    background-color: rgb(233, 209, 178,0.4);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+main{
+    background-color: white;
+    height: 90vh;
+}
+
+.menu_tourne{
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.menu_normal{
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+#principal{
+    height: 70vh;
+    width: 100%;
+}
+
+#map{
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,280 @@
+html,body,header,main,footer,h1,h2,h3,p{
+    margin: 0;
+}
+
+
+body{
+    overscroll-behavior: none;
+    overflow: hidden;
+
+}
+
+
+header{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    background-image: url('img/header_back.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#header_haut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    font-family: Oswald, sans-serif;
+}
+
+#logo{
+    height: 100px;
+    width: 150px;
+    margin-left: 20px;
+}
+
+#div_menu{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    position: relative;
+}
+
+#menu, .menu_tourne, .menu_normal{
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#menu_liste{
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+#espace{
+    padding: 0;
+    width: 5px;
+    border-bottom: solid 1px white;
+}
+
+#menu_liste li{
+    padding: 10px;
+    cursor: pointer;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    border: solid 1px white;
+    background-color: rgb(233, 209, 178,0.4);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+#meteo_a{
+    width: 15%;
+    font-size:xx-large;
+    font-weight: bolder;
+    margin: 0 25;
+    width: 22%;
+    font-family: Oswald, sans-serif;
+}
+
+main{
+    display: flex;
+    background-image: url('img/ciel.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+#villes{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis:80%;
+}
+
+#placeh{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #777;
+    pointer-events: none;
+    transition: 
+      top 0.25s ease,
+      left 0.25s ease,
+      font-size 0.25s ease,
+      color 0.25s ease; 
+}
+
+  #recherche input:focus + label,
+  #recherche input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    color: #000000;
+  }
+
+#recherche input:focus + label,
+#recherche input:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 5px;
+  font-size: large;
+  color: #000000;
+}
+
+#recherche{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+#entrer{
+    width: 10%;
+}
+
+#entrer img{
+    width: 85%;
+}
+
+#selec_ville{
+    width: 70%;
+    opacity: 25%;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#ville_corresp{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    max-height: 100px;
+    overflow: scroll;
+    overscroll-behavior: none;
+}
+
+#ville_corresp li{
+    display: block;
+    padding: 2 4;
+    background-color: rgb(168, 165, 165);
+    border: solid 1px grey;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 40%;
+    align-items: flex-start;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.titre_ville{
+    font-size: x-large;
+    padding: 5px;
+    margin: 10;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateX(+20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+#oneDay{
+    display: none;
+}
+
+.jour_titre{
+    padding: 10;
+    border-bottom: solid 1px rgb(220, 228, 231);
+    margin-bottom: 5px;
+    width: 80%;
+}
+
+.jour_normal, .jour_selec{
+    display: flex;
+    flex-direction: column;
+    margin: 5;
+    background-color: rgb(107, 175, 221, 0.5);
+    opacity: 85%;
+    padding: 30;
+    border-radius: 3px;
+    justify-content: center;
+    animation: fadeIn 1s linear forwards;
+    height: 250px;
+    width: 100%;
+}
+
+.jour_selec{
+    border: solid white 2px ;
+}
+
+.jour:hover{
+    width: 12%;
+}
+
+.semaine{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.title_infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Chango", sans-serif;
+}
+
+.menu_tourne{
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.menu_normal{
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+@keyframes selec{
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 2;
+    }
+}
